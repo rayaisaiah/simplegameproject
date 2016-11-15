@@ -11,3 +11,15 @@ document.addEventListener("keydown", function(e) {
  }
 
 })
+var metay = Number(document.getElementById("meta").getAttribute("y"));
+document.addEventListener("keydown", function(e) {
+ if (e.keyCode == 38) {
+    document.getElementById("meta").setAttribute("y",metay-10)
+  metay = metay-10
+ }
+ else if (e.keyCode == 40){
+   document.getElementById("meta").setAttribute("y",metay+10)
+  metay = metay+10
+ }
+
+})
