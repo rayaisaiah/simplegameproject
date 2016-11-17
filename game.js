@@ -1,4 +1,7 @@
 //movement
+
+//X
+
 var metax = Number(document.getElementById("kirby").getAttribute("x"));
 document.addEventListener("keydown", function(e) {
   var foodCounter = 0;
@@ -21,7 +24,6 @@ document.addEventListener("keydown", function(e) {
     if(metax > foodx && metax < foodx + foodWidth && metay > foody && metay < foody + foodHeight){
       document.getElementById("food").setAttribute("x", val1);
       foodCounter = foodCounter + 1;
-      console.log("works?");
     }
  }
  else if (e.keyCode == 39 && metax + 10 <200 ){
@@ -30,14 +32,16 @@ document.addEventListener("keydown", function(e) {
     if(metax > foodx && metax < foodx + foodWidth && metay > foody && metay < foody + foodHeight){
       document.getElementById("food").setAttribute("x", val1);
       foodCounter = foodCounter + 1;
-      console.log("works?");
     }
  }
 
 })
+
+//Y
+
 var metay = Number(document.getElementById("kirby").getAttribute("y"));
 document.addEventListener("keydown", function(e) {
-
+  var foodCounter = 0;
   var foodx =  Number(document.getElementById("food").getAttribute("x"));
   var foody =  Number(document.getElementById("food").getAttribute("y"));
 
@@ -56,7 +60,6 @@ document.addEventListener("keydown", function(e) {
     if(metax > foodx && metax < foodx + foodWidth && metay > foody && metay < foody + foodHeight){
       document.getElementById("food").setAttribute("x",val1);
       foodCounter = foodCounter + 1;
-      console.log("works?");
     }
  }
  else if (e.keyCode == 40 && metay + 10 < 95){
@@ -65,7 +68,6 @@ document.addEventListener("keydown", function(e) {
     if(metax > foodx && metax < foodx + foodWidth && metay > foody && metay < foody + foodHeight){
       document.getElementById("food").setAttribute("x",val1);
       foodCounter = foodCounter + 1;
-      console.log("works?");
     }
  }
 
