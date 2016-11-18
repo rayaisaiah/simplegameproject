@@ -1,5 +1,5 @@
-//movement
-
+//time
+var timeStart = Date.now();
 //X
 var foodCounter = 0;
 var metax = Number(document.getElementById("kirby").getAttribute("x"));
@@ -11,6 +11,7 @@ document.addEventListener("keydown", function(e) {
 
   var foodWidth = Number(document.getElementById("food").getAttribute("width"));
   var foodHeight = Number(document.getElementById("food").getAttribute("height"));
+  //randomNumberGenerator
   function randomNumberGenerator(min,max)
  {
      return Math.floor(Math.random()*(max-min+1)+min);
@@ -36,11 +37,18 @@ document.addEventListener("keydown", function(e) {
       document.getElementById("text4").textContent = foodCounter;
     }
  }
+ if (foodCounter == 1) {
+   document.getElementById("game").pauseAnimations();
+   var timeStop = Date.now();
+   var endTime;
+   endTime = (timeStop-timeStart)/1000;
+   document.getElementById("text1").textContent = endTime;
 
+ }
 })
 
 //Y
-
+var foodCounter = 0;
 var metay = Number(document.getElementById("kirby").getAttribute("y"));
 document.addEventListener("keydown", function(e) {
 
@@ -49,7 +57,7 @@ document.addEventListener("keydown", function(e) {
 
   var foodWidth = Number(document.getElementById("food").getAttribute("width"));
   var foodHeight = Number(document.getElementById("food").getAttribute("height"));
-
+// randomNumberGenerator
   function randomNumberGenerator(min,max)
  {
      return Math.floor(Math.random()*(max-min+1)+min);
@@ -63,7 +71,6 @@ document.addEventListener("keydown", function(e) {
       document.getElementById("food").setAttribute("x",val1);
       foodCounter = foodCounter + 1;
       document.getElementById("text4").textContent = foodCounter;
-      console.log(foodCounter);
     }
  }
  else if (e.keyCode == 40 && metay + 10 < 95){
@@ -73,8 +80,14 @@ document.addEventListener("keydown", function(e) {
       document.getElementById("food").setAttribute("x",val1);
       foodCounter = foodCounter + 1;
       document.getElementById("text4").textContent = foodCounter;
-      console.log(foodCounter);
     }
  }
+ if (foodCounter == 1) {
+   document.getElementById("game").pauseAnimations();
+   var timeStop = Date.now();
+   var endTime;
+   endTime = (timeStop-timeStart)/1000;
+   document.getElementById("text1").textContent = endTime;
 
+ }
 })
