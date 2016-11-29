@@ -1,5 +1,8 @@
 //time
 var timeStart = Date.now();
+//ending
+ var endTime
+var endend = "YOU WIN!"
 //X
 var foodCounter = 0;
 var metax = Number(document.getElementById("kirby").getAttribute("x"));
@@ -59,12 +62,15 @@ if(metax > foodx && metax < foodx + foodWidth && metay > foody && metay < foody 
      foodCounter = foodCounter + 1;
      document.getElementById("text4").textContent = foodCounter;
    }
- if (foodCounter == 5) {
+   if (foodCounter == 10) {
+     document.getElementById("game").setAttribute("style", "background-color: black")
+   }
+ if (foodCounter == 2) {
    document.getElementById("game").pauseAnimations();
    var timeStop = Date.now();
-   var endTime;
+   endTime;
    endTime = (timeStop-timeStart)/1000;
    document.getElementById("text1").textContent = endTime;
-
+   document.getElementById("end").textContent = endend;
  }
 })
