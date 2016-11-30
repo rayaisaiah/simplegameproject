@@ -72,7 +72,7 @@ else if (e.keyCode == 38 && metay + 10 > 0) {
 
 //collision logic
 if(metax > foodx && metax < foodx + foodWidth && metay > foody && metay < foody + foodHeight){
-    // appleSpeed*=0.08;
+     appleSpeed-=.3;
      document.getElementById("food").setAttribute("x", val1);
      foodCounter = foodCounter + 1;
      document.getElementById("text4").textContent = foodCounter;
@@ -82,7 +82,7 @@ if(metax > foodx && metax < foodx + foodWidth && metay > foody && metay < foody 
      document.getElementById("stave2").textContent = lifeEnergy;
    }
    if(metax > food1x && metax < food1x + food1Width && metay > food1y && metay < food1y + food1Height){
-     //appleSpeed*=0.08;
+     appleSpeed-=.3;
      document.getElementById("food1").setAttribute("x", val2);
      foodCounter = foodCounter + 1;
      document.getElementById("text4").textContent = foodCounter;
