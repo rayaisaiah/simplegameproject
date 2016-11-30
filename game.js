@@ -7,7 +7,8 @@ var endend = "YOU WIN!"
 var foodCounter = 0;
 var metax = Number(document.getElementById("kirby").getAttribute("x"));
 var metay = Number(document.getElementById("kirby").getAttribute("y"));
-
+//speed
+var appleSpeed = 12;
 function randomNumberGenerator(min,max)
 {
    return Math.floor(Math.random()*(max-min+1)+min);
@@ -53,19 +54,25 @@ else if (e.keyCode == 38 && metay + 10 > 0) {
 
 //collision logic
 if(metax > foodx && metax < foodx + foodWidth && metay > foody && metay < foody + foodHeight){
+     appleSpeed*=0.9;
      document.getElementById("food").setAttribute("x", val1);
      foodCounter = foodCounter + 1;
      document.getElementById("text4").textContent = foodCounter;
+     document.getElementById("1").setAttribute("dur", appleSpeed);
+     document.getElementById("2").setAttribute("dur", appleSpeed);
    }
    if(metax > food1x && metax < food1x + food1Width && metay > food1y && metay < food1y + food1Height){
+     appleSpeed*=0.9;
      document.getElementById("food1").setAttribute("x", val1);
      foodCounter = foodCounter + 1;
      document.getElementById("text4").textContent = foodCounter;
+     document.getElementById("1").setAttribute("dur", appleSpeed);
+     document.getElementById("2").setAttribute("dur", appleSpeed);
    }
    if (foodCounter == 10) {
-     document.getElementById("game").setAttribute("style", "background-color: black")
+     document.getElementById("game").setAttribute("style", "background-image: url('http://vignette3.wikia.nocookie.net/kirby/images/8/8e/KRtDL_Dream_Land.png/revision/latest?cb=20111002085713&path-prefix=en')");
    }
- if (foodCounter == 2) {
+ if (foodCounter == 20) {
    document.getElementById("game").pauseAnimations();
    var timeStop = Date.now();
    endTime;
