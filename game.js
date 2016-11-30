@@ -11,7 +11,7 @@ var metay = Number(document.getElementById("kirby").getAttribute("y"));
 //speed
 var appleSpeed = 12;
 //life
-var lifeEnergy = 20;
+var lifeEnergy = 35;
 //randomNumberGenerator
 function randomNumberGenerator(min,max)
 {
@@ -41,32 +41,32 @@ document.addEventListener("keydown", function(e) {
   //randomNumberGenerator
 
   var val1 = randomNumberGenerator(1,95);
-  var val2 = randomNumberGenerator(105,195);
+  var val2 = randomNumberGenerator(105,185);
 
 
 if (e.keyCode == 37 && metax + 10 > 0) {
     document.getElementById("kirby").setAttribute("x",metax-10)
     metax = metax-10
-    lifeEnergy = lifeEnergy - 1;
+    lifeEnergy = lifeEnergy - 2;
     document.getElementById("stave2").textContent = lifeEnergy;
 
 }
  else if (e.keyCode == 39 && metax + 10 < 200 ){
     document.getElementById("kirby").setAttribute("x",metax+10)
     metax = metax+10
-    lifeEnergy = lifeEnergy - 1;
+    lifeEnergy = lifeEnergy - 2;
     document.getElementById("stave2").textContent = lifeEnergy;
 }
 else if (e.keyCode == 38 && metay + 10 > 0) {
     document.getElementById("kirby").setAttribute("y",metay-10)
     metay = metay-10
-    lifeEnergy = lifeEnergy - 1;
+    lifeEnergy = lifeEnergy - 2;
     document.getElementById("stave2").textContent = lifeEnergy;
     }
  else if (e.keyCode == 40 && metay + 10 < 95){
     document.getElementById("kirby").setAttribute("y",metay+10)
     metay = metay+10
-    lifeEnergy = lifeEnergy - 1;
+    lifeEnergy = lifeEnergy - 2;
     document.getElementById("stave2").textContent = lifeEnergy;
 }
 
@@ -82,7 +82,7 @@ if(metax > foodx && metax < foodx + foodWidth && metay > foody && metay < foody 
      document.getElementById("stave2").textContent = lifeEnergy;
    }
    if(metax > food1x && metax < food1x + food1Width && metay > food1y && metay < food1y + food1Height){
-    // appleSpeed*=0.08;
+     //appleSpeed*=0.08;
      document.getElementById("food1").setAttribute("x", val2);
      foodCounter = foodCounter + 1;
      document.getElementById("text4").textContent = foodCounter;
