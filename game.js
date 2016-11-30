@@ -72,12 +72,12 @@ if(metax > foodx && metax < foodx + foodWidth && metay > foody && metay < foody 
    if (foodCounter == 10) {
      document.getElementById("game").setAttribute("style", "background-image: url('http://vignette3.wikia.nocookie.net/kirby/images/8/8e/KRtDL_Dream_Land.png/revision/latest?cb=20111002085713&path-prefix=en')");
    }
- if (foodCounter == 20) {
+ if (foodCounter == 1) {
    document.getElementById("game").pauseAnimations();
    var timeStop = Date.now();
    endTime;
    endTime = (timeStop-timeStart)/1000;
-   document.getElementById("text1").textContent = endTime;
+   document.getElementById("text5").textContent = endTime;
    document.getElementById("end").textContent = endend;
  }
 })
