@@ -8,9 +8,6 @@
   <body>
     <!-- page content -->
     <svg viewBox="0 0 200 95" style="background-color: DarkGrey " id="game">
-      <!--MeatKnight-->
-      <image id="meta" x= "0" y="95" width="50" height="50" xlink:href="http://rs480.pbsrc.com/albums/rr166/XMetaKnight/Meta%20Knight/metaknight_bup.gif~c200">
-      <animate attributeName="y" from="95" to="-40" dur = "2s" begin="20s;40s;60s;100s;" > </image>
       <!--food-->
       <image id="food" x= "50" y="-10" width="20" height="20" xlink:href="http://piq.codeus.net/static/media/userpics/piq_55002_400x400.png">
       <animate id="1" attributeName="y" from="-10" to="100" dur = "12s" begin="0s" repeatCount = "indefinite"> </image>
@@ -27,10 +24,17 @@
 
       <!--Kirby-->
       <image id="kirby" x="0" y="75" width="20" height="20" xlink:href="http://www.emoticonswallpapers.com/avatar/games/Kirby-Floating.gif"/><text id="text2" y= "50" x="170"  font-size="3">EATEN: </text>
+      <!--MeatKnight-->
+      <image id="meta" x= "0" y="80" width="50" height="50" xlink:href="http://rs480.pbsrc.com/albums/rr166/XMetaKnight/Meta%20Knight/metaknight_bup.gif~c200">
+      <animate id="metaMoves" attributeName="y" from="95" to="-40" dur = "2s" begin=""> </image>
+      <!--DEEDEEDEE-->
+      <image id="D3" x= "-50" y="20" width="50" height="50" xlink:href="http://rs271.pbsrc.com/albums/jj127/Ariand54321/King%20Dedede/Combo1.gif~c200">
+      <animate id = "d3"attributeName="x" from="-50" to="350" dur = "5s" begin="2s;5s;10s" > </image>
+      <!--TEXT-->
       <text id="text2" y= "50" x="170"  font-size="3">EATEN: </text>
       <text id="text1" y= "70" x="170"  font-size="3">TIME: </text>
       <text id="stave" y= "10" x="70"  font-size="5">LIFE POINTS: </text>
-      <text id="stave2" y= "17" x="97"  font-size="3">35</text>
+      <text id="stave2" y= "17" x="97"  font-size="3">50</text>
       <text id="text5" y= "75" x="170"  font-size="3"></text>
       <text id="text4" y= "55" x="170"  font-size="3"></text>
       <text id="end" y= "47.5" x="40"  font-size="15"></text>
