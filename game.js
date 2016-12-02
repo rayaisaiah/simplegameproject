@@ -5,6 +5,9 @@ var timeStop;
  var endTime;
 var endend = "YOU WIN!"
 var loselose = "YOU LOSE!"
+var pause = "PAUSED"
+var paused = false;
+var nothing = "";
 //X
 var foodCounter = 0;
 var metax = Number(document.getElementById("kirby").getAttribute("x"));
@@ -36,7 +39,28 @@ document.addEventListener("keydown", function(e) {
   var food1Width = Number(document.getElementById("food1").getAttribute("width"));
   var food1Height = Number(document.getElementById("food1").getAttribute("height"));
 
+//enemies
+var dx =  Number(document.getElementById("D3").getAttribute("x"));
+var dy =  Number(document.getElementById("D3").getAttribute("y"));
 
+var dWidth = Number(document.getElementById("D3").getAttribute("width"));
+var dHeight = Number(document.getElementById("D3").getAttribute("height"));
+
+//pause
+
+/*if(e.keyCode == 32 && paused == false) {
+  document.getElementById("d3").setAttribute(animation-play-state: paused);
+  document.getElementById("pauseT").textContent = pause;
+  paused = true;
+
+}
+
+else if (e.keyCode == 32 && paused == true) {
+document.getElementById("d3").setAttribute(animation-play-state: running);
+ document.getElementById("pauseT").textContent = "";
+paused = false;
+console.log("lol");
+}*/
 
 
   //randomNumberGenerator
@@ -86,7 +110,7 @@ if(metax > foodx && metax < foodx + foodWidth && metay > foody && metay < foody 
      document.getElementById("text4").textContent = foodCounter;
      document.getElementById("1").setAttribute("dur", appleSpeed);
      document.getElementById("2").setAttribute("dur", appleSpeed);
-     lifeEnergy = lifeEnergy + 7;
+     lifeEnergy = lifeEnergy + 8;
      document.getElementById("stave2").textContent = lifeEnergy;
    }
    if(metax > food1x && metax < food1x + food1Width && metay > food1y && metay < food1y + food1Height){
@@ -96,7 +120,7 @@ if(metax > foodx && metax < foodx + foodWidth && metay > foody && metay < foody 
      document.getElementById("text4").textContent = foodCounter;
      document.getElementById("1").setAttribute("dur", appleSpeed);
      document.getElementById("2").setAttribute("dur", appleSpeed);
-     lifeEnergy = lifeEnergy + 7;
+     lifeEnergy = lifeEnergy + 8;
      document.getElementById("stave2").textContent = lifeEnergy;
    }
    if (foodCounter == 8) {
