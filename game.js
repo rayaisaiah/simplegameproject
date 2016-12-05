@@ -67,6 +67,7 @@ console.log("lol");
 
   var val1 = randomNumberGenerator(1,95);
   var val2 = randomNumberGenerator(105,185);
+  var val3 = randomNumberGenerator(10,80);
 
 
 if (e.keyCode == 37 && metax + 10 > 0) {
@@ -126,6 +127,12 @@ if(metax > foodx && metax < foodx + foodWidth && metay > foody && metay < foody 
    if (foodCounter == 8) {
      document.getElementById("game").setAttribute("style", "background-image: url('http://vignette3.wikia.nocookie.net/kirby/images/8/8e/KRtDL_Dream_Land.png/revision/latest?cb=20111002085713&path-prefix=en')");
    }
+   if(metax > dx && metax < dx + dWidth && metay > dy && metay < dy + dHeight){
+
+     document.getElementById("food1").setAttribute("y", val3);
+     lifeEnergy = lifeEnergy - 5;
+     document.getElementById("stave2").textContent = lifeEnergy;
+   }
 
 //  if (endTime == 5 || endTime == 15 || endTime == 25 || endTime == 35 || endTime == 45 || endTime == 55 ) {
     //console.log("hi");
@@ -133,14 +140,14 @@ if(metax > foodx && metax < foodx + foodWidth && metay > foody && metay < foody 
 //  }
 
 
- if (foodCounter == 15 ) {
+ if (foodCounter > 15 || foodCounter == 15) {
    document.getElementById("game").pauseAnimations();
    timeStop = Date.now();
    endTime = Math.round((timeStop-timeStart)/1000);
    document.getElementById("text5").textContent = endTime + "s";
    document.getElementById("end").textContent = endend;
  }
- if (lifeEnergy == 0) {
+ if (lifeEnergy < 0 || lifeEnergy == 0) {
    document.getElementById("game").pauseAnimations();
    timeStop = Date.now();
    endTime = Math.round((timeStop-timeStart)/1000);
